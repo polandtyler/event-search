@@ -13,16 +13,23 @@ class TypeaheadVC: UIViewController {
     @IBOutlet weak var searchBar: CustomSearchBar!
     @IBOutlet weak var searchResultsTableView: UITableView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNeedsStatusBarAppearanceUpdate()
+        UIApplication.shared.statusBarView?.backgroundColor = .darkBlue
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func performSearch(searchText: String) {
         // network or database call
         searchResultsTableView.reloadData()
     }
+
 
 
 }

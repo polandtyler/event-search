@@ -15,11 +15,12 @@
 		2FB886DA210D13B3000DA3F8 /* EventSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB886D9210D13B3000DA3F8 /* EventSearchTests.swift */; };
 		2FB886E5210D13B3000DA3F8 /* EventSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB886E4210D13B3000DA3F8 /* EventSearchUITests.swift */; };
 		2FB886F6210D2555000DA3F8 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB886F5210D2555000DA3F8 /* CustomSearchBar.swift */; };
-		2FB886FA210D25CC000DA3F8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB886F9210D25CC000DA3F8 /* Color.swift */; };
+		2FB886FA210D25CC000DA3F8 /* UIColor+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB886F9210D25CC000DA3F8 /* UIColor+Exts.swift */; };
 		2FB886FF210D37A4000DA3F8 /* ImageViewWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB886FE210D37A4000DA3F8 /* ImageViewWithIcon.swift */; };
 		2FB8870B210D4D28000DA3F8 /* EventSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88709210D4D28000DA3F8 /* EventSearch.xcdatamodeld */; };
 		2FB8870E210D4D96000DA3F8 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8870C210D4D96000DA3F8 /* Event+CoreDataClass.swift */; };
 		2FB8870F210D4D96000DA3F8 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8870D210D4D96000DA3F8 /* Event+CoreDataProperties.swift */; };
+		2FB88711210D4E57000DA3F8 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88710210D4E57000DA3F8 /* EventCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +55,12 @@
 		2FB886E4210D13B3000DA3F8 /* EventSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchUITests.swift; sourceTree = "<group>"; };
 		2FB886E6210D13B3000DA3F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FB886F5210D2555000DA3F8 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
-		2FB886F9210D25CC000DA3F8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2FB886F9210D25CC000DA3F8 /* UIColor+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Exts.swift"; sourceTree = "<group>"; };
 		2FB886FE210D37A4000DA3F8 /* ImageViewWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithIcon.swift; sourceTree = "<group>"; };
 		2FB8870A210D4D28000DA3F8 /* EventSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventSearch.xcdatamodel; sourceTree = "<group>"; };
 		2FB8870C210D4D96000DA3F8 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2FB8870D210D4D96000DA3F8 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2FB88710210D4E57000DA3F8 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,6 @@
 		2FB886B5210D13B1000DA3F8 = {
 			isa = PBXGroup;
 			children = (
-				2FB88709210D4D28000DA3F8 /* EventSearch.xcdatamodeld */,
 				2FB886C0210D13B2000DA3F8 /* EventSearch */,
 				2FB886D8210D13B3000DA3F8 /* EventSearchTests */,
 				2FB886E3210D13B3000DA3F8 /* EventSearchUITests */,
@@ -110,16 +111,16 @@
 		2FB886C0210D13B2000DA3F8 /* EventSearch */ = {
 			isa = PBXGroup;
 			children = (
-				2FB886F7210D2597000DA3F8 /* Helpers */,
+				2FB886F7210D2597000DA3F8 /* Extensions */,
 				2FB886F4210D1FB2000DA3F8 /* Controller */,
 				2FB886F3210D1BD8000DA3F8 /* View */,
 				2FB886F2210D1BC9000DA3F8 /* Model */,
 				2FB886C1210D13B2000DA3F8 /* AppDelegate.swift */,
-				2FB886C3210D13B2000DA3F8 /* TypeaheadVC.swift */,
 				2FB886C5210D13B2000DA3F8 /* Main.storyboard */,
 				2FB886CB210D13B3000DA3F8 /* Assets.xcassets */,
 				2FB886CD210D13B3000DA3F8 /* LaunchScreen.storyboard */,
 				2FB886D0210D13B3000DA3F8 /* Info.plist */,
+				2FB88709210D4D28000DA3F8 /* EventSearch.xcdatamodeld */,
 			);
 			path = EventSearch;
 			sourceTree = "<group>";
@@ -163,21 +164,23 @@
 		2FB886F4210D1FB2000DA3F8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2FB886C3210D13B2000DA3F8 /* TypeaheadVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		2FB886F7210D2597000DA3F8 /* Helpers */ = {
+		2FB886F7210D2597000DA3F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2FB886F9210D25CC000DA3F8 /* Color.swift */,
+				2FB886F9210D25CC000DA3F8 /* UIColor+Exts.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2FB886FB210D3754000DA3F8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2FB88710210D4E57000DA3F8 /* EventCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -331,13 +334,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FB8870B210D4D28000DA3F8 /* EventSearch.xcdatamodeld in Sources */,
+				2FB88711210D4E57000DA3F8 /* EventCell.swift in Sources */,
 				2FB8870E210D4D96000DA3F8 /* Event+CoreDataClass.swift in Sources */,
 				2FB886C4210D13B2000DA3F8 /* TypeaheadVC.swift in Sources */,
 				2FB886C2210D13B2000DA3F8 /* AppDelegate.swift in Sources */,
 				2FB886FF210D37A4000DA3F8 /* ImageViewWithIcon.swift in Sources */,
 				2FB886F6210D2555000DA3F8 /* CustomSearchBar.swift in Sources */,
 				2FB8870F210D4D96000DA3F8 /* Event+CoreDataProperties.swift in Sources */,
-				2FB886FA210D25CC000DA3F8 /* Color.swift in Sources */,
+				2FB886FA210D25CC000DA3F8 /* UIColor+Exts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,7 +677,7 @@
 			);
 			currentVersion = 2FB8870A210D4D28000DA3F8 /* EventSearch.xcdatamodel */;
 			path = EventSearch.xcdatamodeld;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

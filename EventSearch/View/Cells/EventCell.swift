@@ -10,9 +10,18 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var imgView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        titleLabel.textColor = .boldText
+        locationLabel.textColor = .lightText
+        dateTimeLabel.textColor = .lightText
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

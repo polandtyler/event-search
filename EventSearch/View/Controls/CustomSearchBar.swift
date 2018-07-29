@@ -21,14 +21,15 @@ class CustomSearchBar: UISearchBar {
     }
     
     private func commonInit() {
-        let interiorSearchField = self.value(forKey: "searchField") as? UITextField
-        let glassIconView = interiorSearchField?.leftView as? UIImageView
-        
-        
+        // Without setting both barTint and background colors,
+        // the background color renders significantly lighter than the status bar color.
         barTintColor = .darkBlue
+        backgroundColor = .darkBlue
         tintColor = .white
-        glassIconView?.tintColor = .white
-        interiorSearchField?.backgroundColor = .lightBlueSearchBackground
+        
+        // Sets the interior search text field to a lighter blue shade
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .lightBlueSearchBackground
+
         
         showsCancelButton = true
     }

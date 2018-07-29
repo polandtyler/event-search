@@ -13,6 +13,7 @@ class TypeaheadVC: UIViewController {
     @IBOutlet weak var searchBar: CustomSearchBar!
     @IBOutlet weak var searchResultsTableView: UITableView!
     
+    // Set a light status bar tint so that status bar text shows white on the blue background
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -20,8 +21,15 @@ class TypeaheadVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // force re-render of the status bar (engages the lightContent var)
         setNeedsStatusBarAppearanceUpdate()
-        UIApplication.shared.statusBarView?.backgroundColor = .darkBlue
+        
+        // set a new statusBar in order to change the color
+        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+        statusBarView.backgroundColor = .darkBlue
+        view.addSubview(statusBarView)
+
+        // hide the navigation bar for this controller
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     

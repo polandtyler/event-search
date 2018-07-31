@@ -21,6 +21,7 @@
 		2FB8870E210D4D96000DA3F8 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8870C210D4D96000DA3F8 /* Event+CoreDataClass.swift */; };
 		2FB8870F210D4D96000DA3F8 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8870D210D4D96000DA3F8 /* Event+CoreDataProperties.swift */; };
 		2FB88711210D4E57000DA3F8 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88710210D4E57000DA3F8 /* EventCell.swift */; };
+		2FB88718210D649A000DA3F8 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88717210D649A000DA3F8 /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2FB8870C210D4D96000DA3F8 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2FB8870D210D4D96000DA3F8 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2FB88710210D4E57000DA3F8 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		2FB88717210D649A000DA3F8 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2FB886C3210D13B2000DA3F8 /* TypeaheadVC.swift */,
+				2FB88717210D649A000DA3F8 /* TableViewDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				2FB886C4210D13B2000DA3F8 /* TypeaheadVC.swift in Sources */,
 				2FB886C2210D13B2000DA3F8 /* AppDelegate.swift in Sources */,
 				2FB886FF210D37A4000DA3F8 /* ImageViewWithIcon.swift in Sources */,
+				2FB88718210D649A000DA3F8 /* TableViewDataSource.swift in Sources */,
 				2FB886F6210D2555000DA3F8 /* CustomSearchBar.swift in Sources */,
 				2FB8870F210D4D96000DA3F8 /* Event+CoreDataProperties.swift in Sources */,
 				2FB886FA210D25CC000DA3F8 /* UIColor+Exts.swift in Sources */,

@@ -21,6 +21,8 @@ class TypeaheadVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchResultsTableView.register(EventCell.self, forCellReuseIdentifier: "EventCell")
+        
         // force re-render of the status bar (engages the lightContent var)
         setNeedsStatusBarAppearanceUpdate()
         
@@ -31,15 +33,22 @@ class TypeaheadVC: UIViewController {
 
         // hide the navigation bar for this controller
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        searchBar.delegate = self
+        searchResultsTableView.delegate = self
+        searchResultsTableView.dataSource = self
     }
     
     func performSearch(searchText: String) {
         // network or database call
         searchResultsTableView.reloadData()
     }
+}
 
-
-
+extension TypeaheadVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Row was selected at \(indexPath)")
+    }
 }
 
 extension TypeaheadVC: UISearchBarDelegate {

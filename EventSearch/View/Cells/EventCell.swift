@@ -9,25 +9,17 @@
 import UIKit
 
 class EventCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var eventImage: UIImageView!
     
+    func configure() {
+        titleLabel.text = "Test Successful"
+        locationLabel.text = "Test Successful"
+        dateTimeLabel.text = "Test Successful"
+        eventImage.backgroundColor = .blue
+    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        titleLabel.textColor = .boldText
-        locationLabel.textColor = .lightText
-        dateTimeLabel.textColor = .lightText
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

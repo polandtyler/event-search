@@ -21,8 +21,6 @@ class TypeaheadVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchResultsTableView.register(EventCell.self, forCellReuseIdentifier: "EventCell")
-        
         // force re-render of the status bar (engages the lightContent var)
         setNeedsStatusBarAppearanceUpdate()
         
@@ -37,17 +35,23 @@ class TypeaheadVC: UIViewController {
         searchBar.delegate = self
         searchResultsTableView.delegate = self
         searchResultsTableView.dataSource = self
+        
+        searchResultsTableView.estimatedRowHeight = 96
+        searchResultsTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func performSearch(searchText: String) {
         // network or database call
-        searchResultsTableView.reloadData()
     }
 }
 
 extension TypeaheadVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row was selected at \(indexPath)")
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 
@@ -59,9 +63,7 @@ extension TypeaheadVC: UISearchBarDelegate {
 
 extension TypeaheadVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        let searchString = searchBar.text
+        
     }
-    
-    
 }
 
